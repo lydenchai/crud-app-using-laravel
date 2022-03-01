@@ -3,19 +3,36 @@
 @section('content')
 
 <style>
-    .container {
-      max-width: 450px;
-    }
-    .push-top {
-      margin-top: 50px;
-    }
+  .container {
+    max-width: 450px;
+  }
+  .push-top {
+    margin-top: 50px;
+  }
+  .action{
+    display: flex;
+    width:100%;
+  }
+  .c{
+    margin-top: 15px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+  #update, #back{
+    width:100%;
+    margin:5px;
+    cursor: pointer;
+  }
 </style>
 
 <div class="card push-top">
-  <div class="card-header">
-    Edit & Update
+  <div class="card-header text-center">
+    Update Student
   </div>
-
   <div class="card-body">
     @if ($errors->any())
       <div class="alert alert-danger">
@@ -45,7 +62,12 @@
               <label for="password">Password</label>
               <input type="text" class="form-control" name="password" value="{{ $student->password }}"/>
           </div>
-          <button type="submit" class="btn btn-block btn-danger">Update User</button>
+          <div class="action">
+            <ul id="back">
+              <li><a class="btn btn-block btn-danger" href="{{ url("/students") }}">Back</a></li>
+            </ul>
+            <button id="update" type="submit" class="btn btn-block btn-primary">Update User</button>
+          </div>
       </form>
   </div>
 </div>
