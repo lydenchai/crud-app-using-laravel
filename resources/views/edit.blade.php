@@ -1,7 +1,37 @@
 @extends('layout')
-<link rel="stylesheet" href="{{ asset('css/edit.css') }}"> 
 @section('content')
+<style>
+  .container {
+    max-width: 450px;
+  }
 
+  .push-top {
+    margin-top: 50px;
+  }
+
+  .action {
+    display: flex;
+    width: 100%;
+  }
+
+  .c {
+    margin-top: 15px;
+  }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+  }
+
+  #update,
+  #back {
+    width: 100%;
+    margin: 5px;
+    cursor: pointer;
+  }
+</style>
 <div class="card push-top">
   <div class="card-header text-center" style="background:#244154; color: #fff;">
     <h3>Update Student</h3>
@@ -45,35 +75,3 @@
   </div>
 </div>
 @endsection
-<style>
-  .container {
-    max-width: 450px;
-  }
-
-  .push-top {
-    margin-top: 50px;
-  }
-
-  .action {
-    display: flex;
-    width: 100%;
-  }
-
-  .c {
-    margin-top: 15px;
-  }
-
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    text-decoration: none;
-  }
-
-  #update,
-  #back {
-    width: 100%;
-    margin: 5px;
-    cursor: pointer;
-  }
-</style>
