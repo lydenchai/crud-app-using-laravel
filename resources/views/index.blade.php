@@ -20,7 +20,7 @@
   tbody,
   tr,
   td {
-    /* border: 1px solid rgb(8, 8, 8); */
+    border-bottom: 0.8px solid rgb(8, 8, 8);
     color: black;
     text-align: center;
   }
@@ -57,7 +57,7 @@
     text-align: center;
   }
 </style>
-<div class="create">
+<div class="create d-flex align-items-center justify-content-end">
   <ul>
     <li><a class="btn btn-block btn-primary" href="{{ url('/students/create') }}"><i class="fa fa-plus"></i> Create</a></li>
   </ul>
@@ -74,7 +74,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th>ID</th>
+        <th>No.</th>
         <th>Name</th>
         <th>Email</th>
         <th>Phone</th>
