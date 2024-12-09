@@ -79,7 +79,6 @@
         <th>Email</th>
         <th>Phone</th>
         <th>Password</th>
-        <th>Details</th>
         <th>Action</th>
       </tr>
     </thead>
@@ -91,14 +90,22 @@
         <td>{{$students->email}}</td>
         <td>{{$students->phone}}</td>
         <td>{{$students->password}}</td>
-        <td><a class="" style="margin: 10px;" href="{{ route('students.show',$students->id) }}">Show</a></td>
         <td>
-          <a href="{{ route('students.edit', $students->id)}}" class="btn" style="width:60px;"><i class="fa fa-pencil" style="font-size:20px; color:#2b7cff; "></i></a>
-          <form action="{{ route('students.destroy', $students->id)}}" method="post" style="display: inline-block">
-            @csrf
-            @method('DELETE')
-            <button class="btn" type="submit"><i class="fa fa-trash-o" style="font-size:20px; color:red;"></i></button>
-          </form>
+          <div class="d-flex align-items-center justify-content-center">
+            <a href="{{ route('students.show', $students->id) }}">
+                <i class="fa fa-eye" style="font-size:24px; color:#007bff;"></i>
+            </a>
+            <a href="{{ route('students.edit', $students->id) }}" class="mx-2">
+                <i class="fa fa-pencil" style="font-size:24px; color:#f39c12;"></i>
+            </a>
+            <form action="{{ route('students.destroy', $students->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-link p-0">
+                    <i class="fa fa-trash" style="font-size:24px; color:#e74c3c;"></i>
+                </button>
+            </form>
+          </div>
         </td>
       </tr>
       @endforeach
